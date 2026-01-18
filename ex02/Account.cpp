@@ -118,3 +118,7 @@ bool	Account::makeWithdrawal(int withdrawal)
     << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
     return true;
 }
+Account::Account(void)
+{
+	return;
+}

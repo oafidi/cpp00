@@ -2,7 +2,10 @@
 
 int main(int argc, char **argv)
 {
-    int i;
+    int     i;
+    size_t  j;
+    char    c;
+    bool    prev_hadcontent = false;
 
     i = 1;
     if (argc == 1)
@@ -12,13 +15,23 @@ int main(int argc, char **argv)
     }
     while (i < argc)
     {
-        for (size_t j = 0; argv[i][j] != 0; j++)
+        std::string str = argv[i];
+        j = 0;
+        if (str.length() > 0)
         {
-            std::cout << (char)std::toupper(argv[i][j]);
+            if (prev_hadcontent)
+                std::cout << " ";
+            prev_hadcontent = true;
         }
-        std::cout << " ";
+        while (j < str.length())
+        {
+            c = std::toupper(str[j]);
+            std::cout << c;
+            j++;
+        }
         i++;
     }
-    std::cout << std::endl;
+    if (prev_hadcontent)
+        std::cout << std::endl;
     return 0;
 }
