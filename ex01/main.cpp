@@ -4,7 +4,7 @@ bool is_printable(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
     {
-        if (!isprint(str[i]))
+        if (!std::isprint(str[i]))
             return false;
     }
     return true;
@@ -14,7 +14,7 @@ bool is_digits(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
     {
-        if (!isdigit(str[i]))
+        if (!std::isdigit(str[i]))
             return false;
     }
     return true;
@@ -79,7 +79,7 @@ int main()
         else if (command.compare("SEARCH") == 0)
             phoneBook.search();
         else
-            std::cout << "Invalid command. Please try again." << std::endl; // to check
+            std::cout << "Invalid command. Please try again." << std::endl;
     }
     return 0;
 }
