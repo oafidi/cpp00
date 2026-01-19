@@ -18,11 +18,7 @@ int main(int argc, char **argv)
         std::string str = argv[i];
         j = 0;
         if (str.length() > 0)
-        {
-            if (prev_hadcontent)
-                std::cout << " ";
             prev_hadcontent = true;
-        }
         while (j < str.length())
         {
             c = std::toupper(str[j]);
